@@ -1,0 +1,33 @@
+/*
+write a C program to count the duplicate elements of an array
+*/
+
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+void main()
+{
+    int n;
+    int* ptr;
+    int count=0;
+    printf("enter the number of elements of an array");
+    scanf("%d",&n);
+    ptr=(int*)malloc(n*sizeof(int));
+    printf("enter the elements of array");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&ptr[i]);
+    }
+    for(int i=0;i<n;i++)
+    {
+        for(int j=i+1;j<n;j++)
+        {
+          if(ptr[i]==ptr[j])
+          {
+              count++;
+             break;
+          }
+        }
+    }
+    printf("duplicate value is %d ",count);
+}
